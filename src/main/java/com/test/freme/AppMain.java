@@ -45,4 +45,6 @@ public class AppMain {
 		System.out.println(i2.toString());
 		log.info("individu"+i2.toString());
 	}
+	
+	
 }
