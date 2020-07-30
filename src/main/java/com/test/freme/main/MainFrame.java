@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.test.freme;
+package com.test.freme.main;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -15,7 +15,7 @@ import javafx.stage.Stage;
  * @author bilonjea
  *
  */
-public class TestFrame  extends Application{
+public class MainFrame  extends Application{
 
 
     public static void main(String[] args) {

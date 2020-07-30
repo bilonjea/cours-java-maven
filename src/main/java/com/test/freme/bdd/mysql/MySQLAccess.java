@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.test.freme;
+package com.test.freme.bdd.mysql;
 
 
 import java.sql.Connection;
@@ -12,12 +12,17 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
 
+import org.apache.log4j.Logger;
+
 
 /**
  * @author bilonjea
  *
  */
 public class MySQLAccess {
+	
+	private static final Logger log = Logger.getLogger(MySQLAccess.class);
+	
     private Connection connect = null;
     private Statement statement = null;
     private PreparedStatement preparedStatement = null;
@@ -29,6 +34,7 @@ public class MySQLAccess {
     private String password = "RjqpoN5oLmiD7nEJ";
 
     public void readDataBase() throws Exception {
+    	log.info("Lecture dans la bbd");
         try {
             
         	// This will load the MySQL driver, each DB has its own driver
@@ -55,6 +61,7 @@ public class MySQLAccess {
             
 
         } catch (Exception e) {
+        	log.error(e);
             throw e;
         } finally {
             close();
@@ -66,6 +73,7 @@ public class MySQLAccess {
 
     
      private void readVersion() throws SQLException{
+    	 log.info("Lecture de la version");
     	 
     	 ResultSet rs = statement.executeQuery("SELECT VERSION()");
 
@@ -78,19 +86,24 @@ public class MySQLAccess {
      * 
      * @throws SQLException
      */
-    private void insertTableComments() throws SQLException{
+    private void insertTableComments(){
+    	log.info("Insetion des données en bdd");
     	
-    	// PreparedStatements can use variables and are more efficient
-        preparedStatement = connect.prepareStatement("insert into  feedback.Comments values (default, ?, ?, ?, ? , ?, ?)");
-        // "myuser, webpage, datum, summary, COMMENTS from feedback.comments");
-        // Parameters start with 1
-        preparedStatement.setString(1, "Test");
-        preparedStatement.setString(2, "TestEmail");
-        preparedStatement.setString(3, "TestWebpage");
-        preparedStatement.setDate(4, new java.sql.Date(2009, 12, 11));
-        preparedStatement.setString(5, "TestSummary");
-        preparedStatement.setString(6, "TestComment");
-        preparedStatement.executeUpdate();
+    	try {
+			// PreparedStatements can use variables and are more efficient
+			preparedStatement = connect.prepareStatement("insert into  feedback.Comments values (default, ?, ?, ?, ? , ?, ?)");
+			// "myuser, webpage, datum, summary, COMMENTS from feedback.comments");
+			// Parameters start with 1
+			preparedStatement.setString(1, "Test");
+			preparedStatement.setString(2, "TestEmail");
+			preparedStatement.setString(3, "TestWebpage");
+			preparedStatement.setDate(4, new java.sql.Date(2009, 12, 11));
+			preparedStatement.setString(5, "TestSummary");
+			preparedStatement.setString(6, "TestComment");
+			preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			log.error("Probleme de bdd"+e);
+		}
     }
     
     /**
@@ -183,6 +196,7 @@ public class MySQLAccess {
 
     // You need to close the resultSet
     private void close() {
+    	log.info("Fermeture de la connection a la bbd");
         try {
             if (resultSet != null) {
                 resultSet.close();
