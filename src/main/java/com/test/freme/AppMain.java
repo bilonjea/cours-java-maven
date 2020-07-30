@@ -1,4 +1,5 @@
 package com.test.freme;
+import com.test.freme.dao.MySQLAccess;
 import com.test.freme.model.*;
 import lombok.extern.log4j.Log4j;
 
@@ -10,9 +11,8 @@ public class AppMain {
 
 	/******* METHODS *******/
 	
-	public static void main(String[] args) {
-		
-		log.debug("Entering main method");
+	private static void showPerson() {
+		log.info("Entering main method");
 		
 		log.info("created Person object");
 		Person p = new Person();
@@ -39,5 +39,19 @@ public class AppMain {
 						.address("yet another address")
 						.build();
 		log.info("Individual 2" + i2.toString());
+	}
+	
+	private static void startMysql() {
+		log.info("MySQL");
+		try {
+			MySQLAccess dao = new MySQLAccess();
+			dao.readDatabase();
+		} catch (Exception e) {
+			log.error(e);
+		}
+	}
+	
+	public static void main(String[] args) {		
+		startMysql();		
 	}
 }
