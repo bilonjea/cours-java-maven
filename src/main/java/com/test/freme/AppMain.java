@@ -5,6 +5,7 @@ import lombok.extern.log4j.Log4j;
 
 
 @Log4j
+@SuppressWarnings("unused")
 public class AppMain {
 
 	/******* VARIABLES *******/

@@ -7,9 +7,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+@SuppressWarnings("unused")
 public class MySQLAccess {
 	
 	/******* VARIABLES *******/
+	
 	
 	private Connection connect = null;
     private Statement statement = null;
@@ -37,6 +39,5 @@ public class MySQLAccess {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
 	}
 }
