@@ -25,7 +25,7 @@ public class AppMain {
 		
 		try {
 			MySQLAccess dao = new MySQLAccess();
-			dao.readDatabase();
+			dao.readDataBase();
 		} catch (Exception e) {
 			log.error(e);
 		}
