@@ -3,6 +3,7 @@ package com.test.freme;
 import org.apache.log4j.Logger;
 
 import com.sun.tools.javac.Main;
+import com.test.freme.dao.MySQLAccess;
 import com.test.freme.model.Individu;
 import com.test.freme.model.Person;
 
@@ -14,7 +15,22 @@ public class AppMain {
 	
 	//private static final Logger log = Logger.getLogger(AppMain.class);//gerer les bugs et les afficher suivant la class
 
-	public static void main(String[] args) {
+	public static void main (String[] args) {
+		lancerMysql();
+	}
+	
+	
+	private static void lancerMysql() {
+		log.info("Mysql");
+		
+		try {
+			MySQLAccess dao = new MySQLAccess();
+			dao.readDatabase();
+		} catch (Exception e) {
+			log.error(e);
+		}
+	}
+	public static void afficherPerson() {
 		
 		log.info("entree dans la methode main"); 
 		
