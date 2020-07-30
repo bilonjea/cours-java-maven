@@ -1,13 +1,30 @@
 package com.test.freme;
 import org.apache.log4j.Logger;
 
+import com.test.freme.dao.MySQLAccess;
 import com.test.freme.model.*;
+
 
 public class AppMain {
 	
 	private static final Logger log = Logger.getLogger(AppMain.class);
 
 	public static void main(String[] args) {
+		lancerMySQL();
+	}
+	
+	private static void lancerMySQL() {
+		log.info("MySQL");
+		
+		try {
+			MySQLAccess dao = new MySQLAccess();
+			dao.readDataBase();
+		} catch (Exception e){
+			log.error(e);
+		}
+	}
+	
+	public static void affichePersons() {
 		log.info("entée dans la méthode main");
 		
 		log.info("creation Person");
@@ -28,5 +45,4 @@ public class AppMain {
 		System.out.println(i2.toString());
 		log.info("individu"+i2.toString());
 	}
-
 }
