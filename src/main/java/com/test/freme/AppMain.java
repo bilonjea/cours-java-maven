@@ -5,6 +5,7 @@ package com.test.freme;
 
 import org.apache.log4j.Logger;
 
+import com.test.freme.dao.MYSQLAccess;
 import com.test.freme.model.Person;
 
 import lombok.extern.log4j.Log4j;
@@ -22,8 +23,20 @@ public class AppMain {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
-		log.info("entree dans la methode main");
+
+	private static void lancerMysql() {
+		log.info("Mysql");
+		
+		try {
+			MYSQLAccess dao = new MYSQLAccess();
+			dao.readDataBase();
+		}catch (Exception e) {
+			log.error(e);
+		}
+	}
+	
+	private static void afficherPersonne() {
+log.info("entree dans la methode main");
 		
 		//Person
 		log.info("Creation de person");
@@ -56,11 +69,10 @@ public class AppMain {
 				.adress("20 rue de la casscade 75000")
 				.build();
 		log.info("Individu"+individu2.toString());
+	}
+	public static void main(String[] args) {
 		
-		
-		
-		
-
+		lancerMysql();
 	}
 
 }
