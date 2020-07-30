@@ -1,4 +1,5 @@
 com\test\freme\model\Individu$IndividuBuilder.class
 com\test\freme\AppMain.class
 com\test\freme\model\Person.class
+com\test\freme\dao\MySQLAccess.class
 com\test\freme\model\Individu.class

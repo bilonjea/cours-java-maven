@@ -2,8 +2,7 @@ package com.test.freme;
 
 import org.apache.log4j.Logger;
 
-
-
+import com.test.freme.dao.MySQLAccess;
 import com.test.freme.model.Individu;
 import com.test.freme.model.Person;
 
@@ -14,7 +13,23 @@ public class AppMain {
      * @param args
      */
     public static void main(String[] args) {
+    lancerMysql();
+    }
+    
+    private static void lancerMysql() {
+    	log.info("Mysql");
+    	try {
+    		MySQLAccess dao = new MySQLAccess();
+            dao.readDataBase();
+        } catch (Exception e) {
+            log.error(e);
+        
+    	}
+    	
+    }
         // TODO Auto-generated method stub
+    	private static void affichePerson() {
+    		
     	
     	log.debug("entree dans la methode main");
     	log.info("creation Person");
