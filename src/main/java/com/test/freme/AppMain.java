@@ -1,56 +1,47 @@
-/**
- * 
- */
 package com.test.freme;
+
 
 import org.apache.log4j.Logger;
 
 import com.test.freme.model.Individu;
 import com.test.freme.model.Person;
 
-import lombok.extern.log4j.Log4j;
+import lombok.Builder;
+import lombok.extern.java.Log;
 
-/**
- * @author MacoMakrel
- *
- */
 
-@Log4j
+@Log
+
 public class AppMain {
-	//@Log4j à la place de  : private static final Logger log = Logger.getLogger(AppMain.class);
-
-	/**
-	 * @param args
-	 */
+	private static final Logger log = Logger.getLogger(AppMain.class);
 	public static void main(String[] args) {
-
-		log.info("Création d'une personne");
-		Person p = new Person();
-		p.setAdress("Meaux");
-		p.setAge(24);
-		p.setNom("Lud972vic");
-		p.setPrenom("Eureka");
-		log.info("L'objet Person " + p.toString());
-
-		log.info("Création d'un individu");
+		// TODO Auto-generated method stub
 		
-		//on cree l'objet avec le builder ua lieu de new
-		Individu individu = Individu.builder().build();
-		individu.setAdress("Champs sur Marne");
-		individu.setAge(52);
-		individu.setNom("Tata");
-		individu.setPrenom("Toto");
-		log.info("L'objet Individu " + individu.toString());
+
+			log.info("entree dans la méthode main");
 		
-		log.info("Création d'un individu2");
-		//on parametre les attributs pour l'instance
-		Individu individu2 = Individu
-				.builder()
-					.nom("toto")
-					.age(45)
-					.adress("paris")
-					.prenom("tata")
-				.build();
-		log.info("L'objet Individu " + individu2.toString());
+			log.info("creation Individu");
+			Person p = new Person();
+			
+			System.out.println(p.toString());
+			
+			log.info("creation personne");
+			Individu individu = Individu.builder().build();
+			p.setAdresse("25 rue de la poste");
+			p.setAge(13);
+			p.setNom("Durant");
+			log.info("Individu: " + individu.toString());
+			
+			log.info("creation Individu2");
+			Individu individu2 = Individu.builder()
+					.nom("Albert")
+					.prenom("Fred")
+					.age(13)
+					.adresse("12 ru e des rossignols")
+					.build();
+			log.info("Individu2: " + individu2.toString());
+
+
 	}
+
 }
