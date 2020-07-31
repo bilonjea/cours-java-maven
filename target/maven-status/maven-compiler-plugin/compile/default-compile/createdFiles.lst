@@ -1,4 +1,11 @@
-com\test\freme\model\Individual$IndividualBuilder.class
+com\test\freme\spring\lang\Language.class
+com\test\freme\spring\lang\impl\Vietnamese.class
+com\test\freme\AppSpringAnnotationMain.class
 com\test\freme\AppMain.class
+com\test\freme\spring\lang\impl\English.class
 com\test\freme\model\Person.class
+com\test\freme\dao\MySQLAccess.class
+com\test\freme\AppSpringXMLMain.class
+com\test\freme\model\Individual$IndividualBuilder.class
+com\test\freme\spring\config\AppConfiguration.class
 com\test\freme\model\Individual.class

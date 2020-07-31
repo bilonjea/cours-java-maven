@@ -13,6 +13,7 @@
 		<oracle.version>19.7.0.0</oracle.version>
 		<mysql.version>8.0.21</mysql.version>
 		<mainClass>com.test.freme.AppMain</mainClass>
+		<springVersion>4.1.4.RELEASE</springVersion>
 	</properties>
 
 
@@ -64,6 +65,28 @@
             <version>1.18.12</version>
             <scope>provided</scope>
         </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+		<dependency>
+    		<groupId>org.springframework</groupId>
+    		<artifactId>spring-core</artifactId>
+    		<version>${springVersion}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+		<dependency>
+    		<groupId>org.springframework</groupId>
+    		<artifactId>spring-jdbc</artifactId>
+    		<version>${springVersion}</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+		<dependency>
+    		<groupId>org.springframework</groupId>
+    		<artifactId>spring-context</artifactId>
+    		<version>${springVersion}</version>
+		</dependency>
+		
         
 	</dependencies>
 	

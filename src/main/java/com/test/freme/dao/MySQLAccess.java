@@ -1,6 +1,6 @@
 package com.test.freme.dao;
 
-import lombok.extern.log4j.Log4j;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -8,6 +8,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
+
+import lombok.extern.log4j.Log4j;
 
 import com.test.freme.AppMain;
 
