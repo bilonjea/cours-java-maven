@@ -1,11 +1,18 @@
+/**
+ * 
+ */
 package com.test.freme.spring.lang;
 
+/**
+ * @author bilonjea
+ *
+ */
 public interface Language {
 	
-	/******* METHODS *******/
-	public String getGreeting();
-	
-	public String getBye();
-	
-	
+	 // Get a greeting
+    public String getGreeting();
+ 
+    // Get a bye
+    public String getBye();
+
 }
