@@ -13,7 +13,7 @@ public class MySQLAccess {
     private PreparedStatement preparedStatement = null;
     private ResultSet resultSet = null;
 
-    private String url = "jdbc:mysql://localhost:3306/feedback?useSSL=false&serverTimezone=UTC";
+    private String url = "jdbc:mysql://localhost:8889/feedback?useSSL=false&serverTimezone=UTC";
     private String user = "toto";
     private String password = "toto";
 
