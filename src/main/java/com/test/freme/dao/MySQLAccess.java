@@ -1,5 +1,6 @@
 package com.test.freme.dao;
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -8,22 +9,28 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
 
-import lombok.extern.log4j.Log4j;
+import org.apache.log4j.Logger;
 
-@Log4j
-public class MySQLAccess{
-	
-	private Connection connect = null;
-	private Statement statement = null;
-	private PreparedStatement preparedStatement = null;
-	private ResultSet resultSet = null;
-	
-	private String url = "jdbc:mysql://localhost:3306/feedback";
-	private String user = "testuser";
-	private String password = "RjqpoN5oLmiD7nEJ";
-	
 
-public void readDataBase() throws Exception {
+/**
+ * @author bilonjea
+ *
+ */
+public class MySQLAccess {
+	
+	private static final Logger log = Logger.getLogger(MySQLAccess.class);
+	
+    private Connection connect = null;
+    private Statement statement = null;
+    private PreparedStatement preparedStatement = null;
+    private ResultSet resultSet = null;
+    
+    
+    private String url = "jdbc:mysql://localhost:3306/feedback?useSSL=false&serverTimezone=UTC";
+    private String user = "testuser";
+    private String password = "RjqpoN5oLmiD7nEJ";
+
+    public void readDataBase() throws Exception {
     	log.info("Lecture dans la bbd");
         try {
             
@@ -76,8 +83,7 @@ public void readDataBase() throws Exception {
      * 
      * @throws SQLException
      */
-    @SuppressWarnings("deprecation")
-	private void insertTableComments(){
+    private void insertTableComments(){
     	log.info("Insetion des données en bdd");
     	
     	try {
@@ -204,4 +210,5 @@ public void readDataBase() throws Exception {
 
         }
     }
+
 }

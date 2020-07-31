@@ -15,6 +15,7 @@ public class AppMain {
 
 	public static void main(String[] args) {
 		lancerMysql();
+		affichePerson();
 	}
 		private static void lancerMysql() {
 			log.info("Mysql");
