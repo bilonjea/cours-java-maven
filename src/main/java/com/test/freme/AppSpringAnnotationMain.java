@@ -7,6 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.test.freme.dao.MySQLAccess;
+import com.test.freme.spring.bean.GreetingService;
 import com.test.freme.spring.config.AppConfiguration;
 import com.test.freme.spring.lang.Language;
 import com.test.freme.spring.lang.impl.English;
@@ -48,6 +49,11 @@ public class AppSpringAnnotationMain {
 			// TODO Auto-generated catch block
 			log.error(e);
 		}
+		
+		log.info("----------BEAN SERVICE----------");
+		GreetingService gs = (GreetingService) ctx.getBean("greetingService");
+		gs.sayGreeting();
+		
 		
 		log.info("----------BEANS----------");
 	}
