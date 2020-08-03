@@ -8,6 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.test.freme.spring.bean.Country;
 import com.test.freme.spring.bean.GreetingService;
 import com.test.freme.spring.bean.MyComponent;
+import com.test.freme.spring.jdbc.CustomerDao;
 import com.test.freme.spring.lang.Language;
 import com.test.freme.spring.lang.impl.English;
 import com.test.freme.spring.lang.impl.Vietnamese;
@@ -67,6 +68,10 @@ public class AppSpringXMLMain {
 		log.info("----------Country---------");
 		Country country = (Country) context.getBean("country");
 		log.info(country.toString());
+		
+		log.info("----------CustomerDao-------");
+		CustomerDao customer= (CustomerDao) context.getBean("customerDao");
+		customer.createTable();
 
 	}
 
