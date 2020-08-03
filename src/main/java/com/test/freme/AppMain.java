@@ -40,6 +40,9 @@ public class AppMain {
 					.adresse("12 ru e des rossignols")
 					.build();
 			log.info("Individu2: " + individu2.toString());
+			
+			log.info("Individu2: " + individu2.toString());
+			log.info("Individu2: " + individu2.toString());
 
 
 	}
