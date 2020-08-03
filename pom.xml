@@ -5,6 +5,47 @@
 	<groupId>fr.test.freme</groupId>
 	<artifactId>freme</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<developers>
+		<developer>
+			<name>Jean</name>
+			<organization>E-MET Consulting</organization>
+			<email>j.bilong@gmail.com</email>
+			<url>www.linkedin.com/in/bilonjea</url>
+			<roles>
+				<role>Développeur Java Spring Angular</role>
+				<role>Formateur Java</role>
+			</roles>
+		</developer>
+	</developers>
+
+	<contributors>
+		<contributor>
+			<name>Jean</name>
+			<organization>E-MET Consulting</organization>
+			<email>j.bilong@gmail.com</email>
+			<url>www.linkedin.com/in/bilonjea</url>
+			<roles>
+				<role>Développeur Java Spring Angular</role>
+				<role>Formateur Java</role>
+			</roles>
+		</contributor>
+	</contributors>
+
+	<scm>
+		<connection>scm:git:git://github.com/bilonjea/afpamvn.git</connection>
+		<developerConnection>scm:git:git://github.com/bilonjea/afpamvn.git</developerConnection>
+		<url>http://github.com/bilonjea/afpamvn</url>
+	</scm>
+
+	<licenses>
+		<license>
+			<name>GNU Lesser General Public License (LGPL), Version 3</name>
+			<url>http://www.gnu.org/licenses/lgpl.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -12,7 +53,11 @@
 		<maven.compiler.target>11</maven.compiler.target>
 		<oracle.version>19.7.0.0</oracle.version>
 		<mysql.version>8.0.21</mysql.version>
+<<<<<<< HEAD
 		<mainClass>com.test.freme.AppMain</mainClass>
+=======
+		<mainClass>com.test.freme.Main</mainClass>
+>>>>>>> develop
 		<spring.version>4.1.4.RELEASE</spring.version>
 	</properties>
 	
@@ -77,6 +122,7 @@
 			<version>${oracle.version}</version>
 		</dependency>
 
+<<<<<<< HEAD
 
 		<dependency>
 			<groupId>log4j</groupId>
@@ -84,6 +130,15 @@
 			<version>1.2.17</version>
 		</dependency>
 		
+=======
+		<!-- https://mvnrepository.com/artifact/fr.xebia.extras/selma -->
+		<dependency>
+			<groupId>fr.xebia.extras</groupId>
+			<artifactId>selma</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+>>>>>>> develop
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -91,7 +146,23 @@
 			<version>1.18.12</version>
 			<scope>provided</scope>
 		</dependency>
+<<<<<<< HEAD
 		
+=======
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+
+>>>>>>> develop
 		<!-- http://mvnrepository.com/artifact/org.springframework/spring-core -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -113,9 +184,16 @@
 			<artifactId>spring-jdbc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+<<<<<<< HEAD
 	</dependencies>
 
   <build>
+=======
+
+	</dependencies>
+
+	<build>
+>>>>>>> develop
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
 			<plugin>
@@ -174,5 +252,8 @@
 			</plugin>
 		</plugins>
 	</build>
+<<<<<<< HEAD
 	
+=======
+>>>>>>> develop
 </project>

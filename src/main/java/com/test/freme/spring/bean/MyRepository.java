@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class MyRepository {
+<<<<<<< HEAD
 	
 	
 	 public String getAppName() {
@@ -22,5 +23,15 @@ public class MyRepository {
 	    public Date getSystemDateTime() {
 	        return new Date();
 	    }
+=======
+ 
+    public String getAppName() {
+        return "Hello Spring App";
+    }
+ 
+    public Date getSystemDateTime() {
+        return new Date();
+    }
+>>>>>>> develop
 
 }

@@ -11,7 +11,10 @@ import lombok.ToString;
  */
 @ToString
 public class Country {
+<<<<<<< HEAD
 	
+=======
+>>>>>>> develop
 	private String name;
 	private long population;
 	
@@ -32,5 +35,12 @@ public class Country {
 	public void setPopulation(long population) {
 		this.population = population;
 	}
+<<<<<<< HEAD
 
 }
+=======
+	
+	
+}
+ 
+>>>>>>> develop
